@@ -38,9 +38,15 @@ function generatePassword(){
         userLower = confirm("Will this contain lowercase letters? - Ok for Yes and Cancel for No");
     }
     //Options
-    if (userNumber && userCharacter && userUppercase && userLowercase) {
-      answer = numeric.concat(character, userUppercase, lowercase);
+    if (userNum && userChar && userUpper && userLow) {
+      answer = numeric.concat(character, uppercase, lowercase);
       }
+
+    for (var i = 0; i < 8; i++) {
+        var randomIndex = Math.floor(Math.random() * password.length);
+        password = password + password[randomIndex];
+      }
+      return password;
 }
 
 generatePassword()
