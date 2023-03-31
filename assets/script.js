@@ -35,18 +35,17 @@ function generatePassword(){
         userNum = confirm("Will this contain numbers? - Ok for Yes and Cancel for No");
         userChar = confirm("Will this contain $peci@! characters? - Ok for Yes and Cancel for No");
         userUpper = confirm("Will this contain UPPERCASE letters? - Ok for Yes and Cancel for No");
-        userLower = confirm("Will this contain lowercase letters? - Ok for Yes and Cancel for No");
+        userLow = confirm("Will this contain lowercase letters? - Ok for Yes and Cancel for No");
     }
     //Options
     if (userNum && userChar && userUpper && userLow) {
-      answer = numeric.concat(character, uppercase, lowercase);
+      answer = numeric.concat(special, uppercase, lowercase);
       }
 
     for (var i = 0; i < 8; i++) {
-        var randomIndex = Math.floor(Math.random() * password.length);
+        var randomIndex = Math.floor(Math.random() * userInput);
         password = password + password[randomIndex];
       }
-      return password;
+      return password
 }
-
 generatePassword()
