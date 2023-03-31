@@ -27,9 +27,9 @@ function writePassword() {
 
 //Prompt for user to input criteria
 //Prompt for length between 8 and 128 characters
-function generatePassword(){
-  userInput = prompt("How many characters would you like your password? Choose between 8 and 128");    
-    if (userInput < 8 || userInput > 128) {      
+function generatePassword(){   
+    userInput = prompt("How many characters would you like your password? Choose between 8 and 128");
+    if (userInput < 8) {      
         userInput = prompt("Please choose a password only between 8 and 128 characters in length");
     } else {
         userNum = confirm("Will this contain numbers? - Ok for Yes and Cancel for No");
@@ -37,11 +37,10 @@ function generatePassword(){
         userUpper = confirm("Will this contain UPPERCASE letters? - Ok for Yes and Cancel for No");
         userLower = confirm("Will this contain lowercase letters? - Ok for Yes and Cancel for No");
     }
-
-
-
+    //Options
+    if (userNumber && userCharacter && userUppercase && userLowercase) {
+      answer = numeric.concat(character, userUppercase, lowercase);
+      }
 }
-
-
 
 generatePassword()
