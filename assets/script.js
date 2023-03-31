@@ -29,29 +29,25 @@ var lowerCaseAnswer =
 //
 
 //Prompt user for criteria
-var passwordCriteria = alert("Hello! \nTo generate your new password, please proceed with the following steps...");
+//var passwordCriteria = alert("Hello! \nTo generate your new password, please proceed with the following steps...");
 
-prompt("Please choose a password between 8 and 128 characters in length. Enter the character count below: ");
+//prompt("Please choose a password between 8 and 128 characters in length. Enter the character count below: ");
 
 //Prompt for length between 8 and 128 characters
-function criteria(){
-   // prompt("Please choose a password between 8 and 128 characters in length. Enter the character count below: ");
-    var passwordLength = parseInt(passwordLength);{
-    if (UserInput < 8){
-      alert("Please choose a character limit between 8 through 128");
-    }
-    else if (UserInput > 128)
-      alert("Please choose a character limit under 128");
-  }
+function generatePassword(){
+  userInput = prompt("How many characters would you like your password? Choose between 8 and 128");    
+    if (userInput < 8 || userInput > 128) {      
+        userInput = prompt("Please choose a password only between 8 and 128 characters in length");
+    } else {
+        // confirm() dialog box displayed with ok or cancel/true, false
+        userNumber = confirm("Will this contain numbers? - Ok for Yes and Cancel for No");
+        userCharacter = confirm("Will this contain special characters? - Ok for Yes and Cancel for No");
+        userUppercase = confirm("Will this contain Uppercase letters? - Ok for Yes and Cancel for No");
+        userLowercase = confirm("Will this contain Lowercase letters? - Ok for Yes and Cancel for No");
+    };
 }
 
 
-
-
-//Each prompt is to be answered with validation
-function answerConfirm() {
-  confirm("Please confirm your answer by clicking on OK to continue");
-}
 
 //When all prompts are answered, a password is generated that matches all selected criteria
 
